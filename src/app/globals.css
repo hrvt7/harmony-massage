@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Teal / mint green — calming, spa-like */
+  --color-primary: #40B8A0;
+  --color-primary-light: #E5F5F0;
+  --color-primary-dark: #2E9480;
+
+  /* Warm amber — inviting CTA */
+  --color-accent: #C4956A;
+  --color-accent-dark: #A87D52;
+
+  /* Warm backgrounds */
+  --color-surface: #FAFAF8;
+  --color-surface-warm: #F5F1ED;
+  --color-surface-alt: #F5F1ED;
+  --color-surface-card: #FFFFFF;
+
+  /* Warm text */
+  --color-foreground: #2D2926;
+  --color-foreground-secondary: #5C5552;
+  --color-foreground-muted: #9B9490;
+
+  /* Status */
+  --color-success: #40B8A0;
+  --color-danger: #C75B5B;
+  --color-warning: #D4956A;
+
+  /* Borders */
+  --color-border: #E8E2DD;
+  --color-border-light: #F0EBE7;
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: #E5F5F0;
+  color: #2E9480;
+}
+
+/* Dot grid texture — very subtle */
+.dot-grid {
+  background-image: radial-gradient(circle, #D5CFC9 0.6px, transparent 0.6px);
+  background-size: 32px 32px;
+}
+
+/* Pulse for badge */
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(64, 184, 160, 0.25); }
+  50% { box-shadow: 0 0 0 10px rgba(64, 184, 160, 0); }
+}
+
+.pulse-badge {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(6px); opacity: 0.8; }
+}
+
+.scroll-bounce {
+  animation: bounce-slow 2.5s ease-in-out infinite;
+}
+
+/* Heading highlight underline — teal */
+.text-highlight {
+  background: linear-gradient(to top, #C8E8E0 0%, #C8E8E0 35%, transparent 35%);
+  padding: 0 0.1em;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px -12px rgba(45, 41, 38, 0.08), 0 4px 16px -4px rgba(45, 41, 38, 0.04);
+}
+
+/* CTA glow — warm amber */
+.cta-glow {
+  transition: all 0.3s ease;
+}
+.cta-glow:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px -4px rgba(196, 149, 106, 0.4);
+}
+
+/* Section divider wave */
+.wave-divider {
+  position: relative;
+}
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40'%3E%3Cpath fill='%23FAFAF8' d='M0,32L60,26.7C120,21,240,11,360,8C480,5,600,11,720,16C840,21,960,27,1080,26.7C1200,27,1320,21,1380,18.7L1440,16L1440,40L1380,40C1320,40,1200,40,1080,40C960,40,840,40,720,40C600,40,480,40,360,40C240,40,120,40,60,40L0,40Z'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: 100% 100%;
+}
+
+/* Expandable service card */
+.service-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.service-expand[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.service-expand > div {
+  overflow: hidden;
+}
