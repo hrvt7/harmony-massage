@@ -71,8 +71,26 @@ export default function Hero() {
             </FadeIn>
           </div>
 
-          {/* Right — spacer for background image visibility */}
-          <div className="lg:col-span-5 hidden lg:block" />
+          {/* Right — profile card */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <FadeIn direction="right" delay={0.2}>
+              <div className="relative max-w-[280px]">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-primary/10 transform rotate-2 scale-[1.02] -z-10" />
+                <div className="rounded-3xl bg-surface-card border border-border shadow-2xl shadow-primary/8 overflow-hidden transform lg:rotate-1 hover:rotate-0 transition-all duration-500">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/hero-profil.webp"
+                    alt="Masszőr — Harmony Masszázs Stúdió"
+                    className="w-full h-auto"
+                  />
+                  <div className="p-4 text-center">
+                    <h3 className="font-heading font-bold text-foreground text-base">Harmony Masszázs</h3>
+                    <p className="text-xs text-foreground-muted mt-0.5">Stúdió — Budapest</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
