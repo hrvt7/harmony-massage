@@ -4,41 +4,22 @@ const benefits = [
   {
     title: "Szakértő kezek",
     desc: "Több mint 10 év tapasztalattal rendelkező, képzett masszőr.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
+    image: "/images/about-szakerto.webp",
   },
   {
     title: "Egyedi kezelések",
     desc: "Minden masszázst az Ön testéhez és igényeihez szabunk személyre.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 16v-4" />
-        <path d="M12 8h.01" />
-      </svg>
-    ),
+    image: "/images/about-egyedi.webp",
   },
   {
     title: "Nyugodt légkör",
     desc: "Intim, relaxációs környezet ahol valóban kikapcsolódhat.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0" />
-        <path d="M12 8v4l2 2" />
-      </svg>
-    ),
+    image: "/images/about-legkor.webp",
   },
   {
     title: "Prémium olajok",
     desc: "Kizárólag természetes, kiváló minőségű masszázsolajokkal dolgozunk.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-      </svg>
-    ),
+    image: "/images/about-olajok.webp",
   },
 ];
 
@@ -67,16 +48,26 @@ export default function About() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {benefits.map((benefit, i) => (
             <FadeIn key={benefit.title} delay={i * 0.1}>
-              <div className="rounded-2xl border border-border bg-surface-card overflow-hidden card-hover group h-full p-6 lg:p-7 text-center">
-                <div className="mx-auto h-16 w-16 rounded-2xl bg-primary/8 flex items-center justify-center mb-5 text-primary group-hover:bg-primary/12 transition-colors">
-                  {benefit.icon}
+              <div className="rounded-2xl border border-border bg-surface-card overflow-hidden card-hover group h-full">
+                {/* Image */}
+                <div className="h-52 sm:h-56 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={benefit.image}
+                    alt={benefit.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="font-heading text-base font-bold text-foreground mb-2 tracking-[-0.01em]">
-                  {benefit.title}
-                </h3>
-                <p className="text-[0.85rem] text-foreground-muted leading-relaxed">
-                  {benefit.desc}
-                </p>
+                {/* Text */}
+                <div className="p-5 lg:p-6">
+                  <h3 className="font-heading text-base font-bold text-foreground mb-2 tracking-[-0.01em]">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-[0.85rem] text-foreground-muted leading-relaxed">
+                    {benefit.desc}
+                  </p>
+                </div>
               </div>
             </FadeIn>
           ))}

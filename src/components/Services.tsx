@@ -62,14 +62,11 @@ function DesktopCard({ service, index }: { service: typeof services[number]; ind
       >
         {/* Header — always visible */}
         <div className="p-4 lg:p-5 h-[120px] flex items-center gap-4">
-          <div className={`h-14 w-14 shrink-0 rounded-2xl bg-primary/8 flex items-center justify-center transition-all duration-300 ${
+          <div className={`h-14 w-14 shrink-0 rounded-2xl overflow-hidden transition-all duration-300 ${
             open ? "ring-2 ring-primary/30" : "ring-1 ring-border"
           }`}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-              <path d="M18 20a6 6 0 0 0-12 0" />
-              <circle cx="12" cy="10" r="4" />
-              <circle cx="12" cy="12" r="10" />
-            </svg>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
@@ -92,12 +89,9 @@ function DesktopCard({ service, index }: { service: typeof services[number]; ind
         {open && (
           <div className="px-4 lg:px-5 pb-5 h-[400px] flex flex-col">
             <div className="border-t border-border-light pt-4 flex flex-col flex-1">
-              <div className="mb-3 rounded-xl overflow-hidden shrink-0 h-[180px] bg-primary-light/30 flex items-center justify-center">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-primary/30">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
+              <div className="mb-3 rounded-xl overflow-hidden shrink-0 h-[180px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <p className="text-[0.85rem] text-foreground-secondary leading-[1.7] line-clamp-5 flex-1">{service.detail}</p>
               <a
@@ -126,12 +120,9 @@ function MobileCard({ service, index }: { service: typeof services[number]; inde
         href={service.href}
         className="flex flex-col rounded-xl border border-border bg-surface-card overflow-hidden card-hover group w-full"
       >
-        <div className="w-full aspect-square overflow-hidden bg-primary-light/30 flex items-center justify-center">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary/40">
-            <path d="M18 20a6 6 0 0 0-12 0" />
-            <circle cx="12" cy="10" r="4" />
-            <circle cx="12" cy="12" r="10" />
-          </svg>
+        <div className="w-full aspect-square overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="px-2 py-2.5 text-center h-[3rem] flex items-center justify-center">
           <h3 className="font-heading text-[0.7rem] font-bold text-foreground tracking-[-0.01em] leading-tight line-clamp-2">
