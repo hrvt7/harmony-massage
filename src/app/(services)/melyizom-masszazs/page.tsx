@@ -12,6 +12,7 @@ export default function MelyizomMasszazsPage() {
     <ServicePage
       title="Mélyizom masszázs"
       subtitle="Intenzív masszázs a mélyen fekvő izomfeszültségek és krónikus fájdalmak oldására."
+      image="/images/service-melyizom.webp"
       sections={[
         {
           heading: "Mi az a mélyizom masszázs?",

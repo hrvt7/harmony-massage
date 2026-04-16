@@ -12,6 +12,7 @@ export default function ThaiMasszazsPage() {
     <ServicePage
       title="Thai masszázs"
       subtitle="Ősi keleti technika nyújtással és akupresszúrával — 2500 év bölcsessége az Ön szolgálatában."
+      image="/images/service-thai.webp"
       sections={[
         {
           heading: "Mi az a thai masszázs?",

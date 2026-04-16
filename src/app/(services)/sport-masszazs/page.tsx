@@ -12,6 +12,7 @@ export default function SportMasszazsPage() {
     <ServicePage
       title="Sportmasszázs"
       subtitle="Célzott masszázs sportolóknak és aktív életmódot folytatóknak a teljesítmény és regeneráció érdekében."
+      image="/images/service-sport.webp"
       sections={[
         {
           heading: "Mi az a sportmasszázs?",

@@ -12,6 +12,7 @@ export default function SvedMasszazsPage() {
     <ServicePage
       title="Svéd masszázs"
       subtitle="Klasszikus relaxációs masszázs az egész test átfogó ellazítására és a vérkeringés serkentésére."
+      image="/images/service-sved.webp"
       sections={[
         {
           heading: "Mi az a svéd masszázs?",

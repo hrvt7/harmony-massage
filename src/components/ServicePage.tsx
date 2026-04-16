@@ -3,17 +3,53 @@ import FadeIn from "./FadeIn";
 interface ServicePageProps {
   title: string;
   subtitle: string;
+  image: string;
   sections: { heading: string; text: string }[];
   relatedServices: { title: string; href: string }[];
 }
 
-export default function ServicePage({ title, subtitle, sections, relatedServices }: ServicePageProps) {
+export default function ServicePage({ title, subtitle, image, sections, relatedServices }: ServicePageProps) {
   return (
     <>
-      {/* Hero area */}
-      <section className="relative pt-36 pb-16 overflow-hidden">
-        <div className="absolute inset-0 -z-20 bg-gradient-to-br from-primary-light/40 via-surface to-surface" />
-        <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
+      {/* Mobile: image visible at top, then text below */}
+      <div className="sm:hidden">
+        <div className="h-[72px]" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={image} alt={title} className="w-full h-auto" />
+      </div>
+
+      {/* Desktop: background image hero with fade — same pattern as main Hero */}
+      <section className="hidden sm:block relative pt-36 overflow-hidden">
+        <div className="absolute inset-0 -z-20">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={image} alt={title} className="w-full h-full object-cover object-center" />
+          {/* Left fade for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF8]/85 via-[#FAFAF8]/50 to-transparent" />
+          {/* Bottom fade */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAFAF8]" />
+        </div>
+        <div className="h-48 lg:h-56" />
+        <div className="relative">
+          <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8 pt-12 pb-14">
+            <FadeIn>
+              <a href="/#szolgaltatasok" className="inline-flex items-center gap-1.5 text-sm text-primary font-medium hover:text-primary-dark transition-colors mb-5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+                Vissza a szolgáltatásokhoz
+              </a>
+              <h1 className="font-heading font-extrabold tracking-[-0.03em] text-foreground leading-tight" style={{ fontSize: "clamp(2rem, 4vw + 0.5rem, 3rem)" }}>
+                {title}
+              </h1>
+              <p className="mt-4 text-lg text-foreground-secondary leading-relaxed max-w-2xl">{subtitle}</p>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile: title area below image */}
+      <div className="sm:hidden bg-[#FAFAF8]">
+        <div className="mx-auto max-w-4xl px-5 pt-8 pb-10">
           <FadeIn>
             <a href="/#szolgaltatasok" className="inline-flex items-center gap-1.5 text-sm text-primary font-medium hover:text-primary-dark transition-colors mb-5">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -21,13 +57,13 @@ export default function ServicePage({ title, subtitle, sections, relatedServices
               </svg>
               Vissza a szolgáltatásokhoz
             </a>
-            <h1 className="font-heading font-extrabold tracking-[-0.03em] text-foreground leading-tight" style={{ fontSize: "clamp(2rem, 4vw + 0.5rem, 3rem)" }}>
+            <h1 className="font-heading font-extrabold tracking-[-0.03em] text-foreground leading-tight text-3xl">
               {title}
             </h1>
-            <p className="mt-4 text-lg text-foreground-secondary leading-relaxed max-w-2xl">{subtitle}</p>
+            <p className="mt-4 text-lg text-foreground-secondary leading-relaxed">{subtitle}</p>
           </FadeIn>
         </div>
-      </section>
+      </div>
 
       {/* Content sections */}
       <section className="py-12 sm:py-16">
