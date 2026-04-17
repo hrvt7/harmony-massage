@@ -30,10 +30,14 @@ export default function ServicePage({ title, subtitle, image, video, sections, r
 
   return (
     <>
-      {/* Mobile: media visible at top, then text below */}
+      {/* Mobile: media visible at top with bottom fade, then text below */}
       <div className="sm:hidden">
         <div className="h-[72px]" />
-        <MediaTag className="w-full h-auto" />
+        <div className="relative">
+          <MediaTag className="w-full h-auto" />
+          {/* Bottom fade into page background */}
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
+        </div>
       </div>
 
       {/* Desktop: background media hero with fade — same pattern as main Hero */}
