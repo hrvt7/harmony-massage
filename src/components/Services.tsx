@@ -59,6 +59,7 @@ const services: Service[] = [
     short: "Ősi keleti technika nyújtással és akupresszúrával.",
     detail: "A thai masszázs egy 2500 éves hagyományú gyógyászati technika, amely ötvözi az akupresszúrát, az energiavonalak mentén végzett nyomást és a jóga-szerű passzív nyújtásokat. A kezelés ruhában, matracon történik, olaj nélkül. A terapeuta kézzel, lábbal, könyökkel és térdével dolgozik, miközben a testet különböző pozíciókba helyezi. Eredménye a fokozott rugalmasság, jobb energiaáramlás és mély ellazulás.",
     image: "/images/service-thai.webp",
+    video: "/videos/service-thai.webm",
   },
 ];
 

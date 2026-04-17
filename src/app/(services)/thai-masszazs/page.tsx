@@ -13,6 +13,7 @@ export default function ThaiMasszazsPage() {
       title="Thai masszázs"
       subtitle="Ősi keleti technika nyújtással és akupresszúrával — 2500 év bölcsessége az Ön szolgálatában."
       image="/images/service-thai.webp"
+      video="/videos/service-thai.webm"
       sections={[
         {
           heading: "Mi az a thai masszázs?",
