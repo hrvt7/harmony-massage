@@ -5,20 +5,32 @@ import FadeIn from "./FadeIn";
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32 overflow-hidden wave-divider">
-      {/* Background image + overlay */}
+      {/* Background video + overlay */}
       <div className="absolute inset-0 -z-20">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-bg-mobile.webp"
-          alt="Masszázs stúdió belső tér illusztráció"
+        {/* Mobile video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disablePictureInPicture
           className="w-full h-full object-cover object-center sm:hidden"
-        />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/hero-bg.webp"
-          alt=""
+        >
+          <source src="/videos/hero-mobil.webm" type="video/webm" />
+        </video>
+        {/* Desktop video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disablePictureInPicture
           className="w-full h-full object-cover object-[center_30%] hidden sm:block"
-        />
+        >
+          <source src="/videos/hero-desktop.webm" type="video/webm" />
+        </video>
         {/* Desktop: left fade for text readability */}
         <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-[#FAFAF8]/85 via-[#FAFAF8]/50 to-transparent" />
         {/* Mobile: bottom fade for text */}
