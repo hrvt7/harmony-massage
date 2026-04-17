@@ -17,8 +17,9 @@ export default function ServicePage({ title, subtitle, image, video, sections, r
         muted
         loop
         playsInline
+        preload="auto"
+        disablePictureInPicture
         className={className}
-        poster={image}
       >
         <source src={video} type="video/webm" />
       </video>

@@ -67,7 +67,8 @@ function Media({ service, className }: { service: Service; className: string }) 
         muted
         loop
         playsInline
-        poster={service.image}
+        preload="auto"
+        disablePictureInPicture
         className={className}
       >
         <source src={service.video} type="video/webm" />
