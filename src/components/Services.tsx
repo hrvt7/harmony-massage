@@ -3,13 +3,23 @@
 import { useState } from "react";
 import FadeIn from "./FadeIn";
 
-const services = [
+type Service = {
+  title: string;
+  href: string;
+  short: string;
+  detail: string;
+  image: string;
+  video?: string;
+};
+
+const services: Service[] = [
   {
     title: "Svéd masszázs",
     href: "/sved-masszazs",
     short: "Klasszikus relaxációs masszázs az egész test átfogó ellazítására.",
     detail: "A svéd masszázs a legismertebb és leggyakrabban alkalmazott masszázstechnika. Simító, gyúró, dörzsölő és ütögető mozdulatokkal dolgozunk, amelyek serkentik a vérkeringést, oldják az izomfeszültséget és elősegítik a méreganyagok kiürülését. Ideális választás stresszoldásra, általános relaxációra és a közérzet javítására. A kezelés 60 vagy 90 perces időtartamban érhető el.",
     image: "/images/service-sved.webp",
+    video: "/videos/service-sved.webm",
   },
   {
     title: "Aromaterápiás masszázs",
@@ -48,8 +58,28 @@ const services = [
   },
 ];
 
+/* Media — video if available, otherwise image */
+function Media({ service, className }: { service: Service; className: string }) {
+  if (service.video) {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={service.image}
+        className={className}
+      >
+        <source src={service.video} type="video/webm" />
+      </video>
+    );
+  }
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={service.image} alt={service.title} className={className} loading="lazy" />;
+}
+
 /* Desktop: expandable card */
-function DesktopCard({ service, index }: { service: typeof services[number]; index: number }) {
+function DesktopCard({ service, index }: { service: Service; index: number }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -65,8 +95,7 @@ function DesktopCard({ service, index }: { service: typeof services[number]; ind
           <div className={`h-14 w-14 shrink-0 rounded-2xl overflow-hidden transition-all duration-300 ${
             open ? "ring-2 ring-primary/30" : "ring-1 ring-border"
           }`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
+            <Media service={service} className="w-full h-full object-cover" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
@@ -90,8 +119,7 @@ function DesktopCard({ service, index }: { service: typeof services[number]; ind
           <div className="px-4 lg:px-5 pb-5 h-[400px] flex flex-col">
             <div className="border-t border-border-light pt-4 flex flex-col flex-1">
               <div className="mb-3 rounded-xl overflow-hidden shrink-0 h-[180px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
+                <Media service={service} className="w-full h-full object-cover" />
               </div>
               <p className="text-[0.85rem] text-foreground-secondary leading-[1.7] line-clamp-5 flex-1">{service.detail}</p>
               <a
@@ -113,7 +141,7 @@ function DesktopCard({ service, index }: { service: typeof services[number]; ind
 }
 
 /* Mobile: simple card → links to subpage */
-function MobileCard({ service, index }: { service: typeof services[number]; index: number }) {
+function MobileCard({ service, index }: { service: Service; index: number }) {
   return (
     <FadeIn delay={index * 0.04}>
       <a
@@ -121,8 +149,7 @@ function MobileCard({ service, index }: { service: typeof services[number]; inde
         className="flex flex-col rounded-xl border border-border bg-surface-card overflow-hidden card-hover group w-full"
       >
         <div className="w-full aspect-square overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
+          <Media service={service} className="w-full h-full object-cover" />
         </div>
         <div className="px-2 py-2.5 text-center h-[3rem] flex items-center justify-center">
           <h3 className="font-heading text-[0.7rem] font-bold text-foreground tracking-[-0.01em] leading-tight line-clamp-2">
