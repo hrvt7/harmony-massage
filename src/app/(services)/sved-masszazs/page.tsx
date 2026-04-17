@@ -13,6 +13,7 @@ export default function SvedMasszazsPage() {
       title="Svéd masszázs"
       subtitle="Klasszikus relaxációs masszázs az egész test átfogó ellazítására és a vérkeringés serkentésére."
       image="/images/service-sved.webp"
+      video="/videos/service-sved.webm"
       sections={[
         {
           heading: "Mi az a svéd masszázs?",

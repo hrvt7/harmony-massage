@@ -4,25 +4,41 @@ interface ServicePageProps {
   title: string;
   subtitle: string;
   image: string;
+  video?: string;
   sections: { heading: string; text: string }[];
   relatedServices: { title: string; href: string }[];
 }
 
-export default function ServicePage({ title, subtitle, image, sections, relatedServices }: ServicePageProps) {
+export default function ServicePage({ title, subtitle, image, video, sections, relatedServices }: ServicePageProps) {
+  const MediaTag = ({ className }: { className: string }) =>
+    video ? (
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className={className}
+        poster={image}
+      >
+        <source src={video} type="video/webm" />
+      </video>
+    ) : (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={image} alt={title} className={className} />
+    );
+
   return (
     <>
-      {/* Mobile: image visible at top, then text below */}
+      {/* Mobile: media visible at top, then text below */}
       <div className="sm:hidden">
         <div className="h-[72px]" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={title} className="w-full h-auto" />
+        <MediaTag className="w-full h-auto" />
       </div>
 
-      {/* Desktop: background image hero with fade — same pattern as main Hero */}
+      {/* Desktop: background media hero with fade — same pattern as main Hero */}
       <section className="hidden sm:block relative pt-36 overflow-hidden">
         <div className="absolute inset-0 -z-20">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image} alt={title} className="w-full h-full object-cover object-center" />
+          <MediaTag className="w-full h-full object-cover object-center" />
           {/* Left fade for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAF8]/85 via-[#FAFAF8]/50 to-transparent" />
           {/* Bottom fade */}
