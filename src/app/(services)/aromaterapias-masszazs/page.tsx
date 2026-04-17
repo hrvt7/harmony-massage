@@ -13,6 +13,7 @@ export default function AromaterapiasMasszazsPage() {
       title="Aromaterápiás masszázs"
       subtitle="Illóolajos masszázs a test és a lélek harmonizálására — az illatok gyógyító ereje."
       image="/images/service-aroma.webp"
+      video="/videos/service-aroma.webm"
       sections={[
         {
           heading: "Mi az aromaterápiás masszázs?",

@@ -13,6 +13,7 @@ export default function ForroKovesMasszazsPage() {
       title="Forró köves masszázs"
       subtitle="Bazaltkövekkel végzett hőterápiás masszázs a mély ellazulásért és a vérkeringés javításáért."
       image="/images/service-koves.webp"
+      video="/videos/service-koves.webm"
       sections={[
         {
           heading: "Mi az a forró köves masszázs?",

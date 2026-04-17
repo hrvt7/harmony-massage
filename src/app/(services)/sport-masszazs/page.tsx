@@ -13,6 +13,7 @@ export default function SportMasszazsPage() {
       title="Sportmasszázs"
       subtitle="Célzott masszázs sportolóknak és aktív életmódot folytatóknak a teljesítmény és regeneráció érdekében."
       image="/images/service-sport.webp"
+      video="/videos/service-sport.webm"
       sections={[
         {
           heading: "Mi az a sportmasszázs?",

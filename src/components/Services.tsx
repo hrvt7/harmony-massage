@@ -27,6 +27,7 @@ const services: Service[] = [
     short: "Illóolajos masszázs a test és a lélek harmonizálására.",
     detail: "Az aromaterápiás masszázs során gondosan válogatott illóolajokat használunk, amelyek a bőrön át felszívódva és az illatuk révén is hatnak. Levendula a nyugalomért, eukaliptusz a légzésért, rozmaring a frissítő energiáért — az olajokat az Ön igényeihez igazítjuk. A lágy, ringató mozdulatok és az aromák együttes hatása mély relaxációt eredményez. Különösen javasolt stressz, alvászavar és érzelmi kimerültség esetén.",
     image: "/images/service-aroma.webp",
+    video: "/videos/service-aroma.webm",
   },
   {
     title: "Mélyizom masszázs",
@@ -34,6 +35,7 @@ const services: Service[] = [
     short: "Intenzív masszázs a mélyen fekvő izomfeszültségek oldására.",
     detail: "A mélyizom (deep tissue) masszázs a mélyebb izomrétegekre és kötőszövetekre koncentrál, lassú, erőteljes nyomással dolgozva. Különösen hatékony krónikus fájdalmak, tartási problémák és sportolás okozta izomláz kezelésében. A kezelés során a terapeuta könyökkel, alkarral és ujjbegyekkel dolgozik a mélyebb rétegek eléréséhez. Átmeneti érzékenység normális a kezelés után — ez a gyógyulás jele.",
     image: "/images/service-melyizom.webp",
+    video: "/videos/service-melyizom.webm",
   },
   {
     title: "Forró köves masszázs",
@@ -41,6 +43,7 @@ const services: Service[] = [
     short: "Bazaltkövekkel végzett hőterápiás masszázs a mély ellazulásért.",
     detail: "A forró köves masszázs során speciálisan felmelegített bazaltköveket helyezünk a test energiapontjaira, miközben a kövek segítségével masszírozzuk az izmokat. A meleg hatására az erek kitágulnak, javul a vérkeringés, és az izmok könnyebben ellazulnak. A bazaltkövek egyenletes hőt adnak le, ami mélyen átjárja a szöveteket. Különösen hatékony izommerevség, stressz és hideg időszakban érzett feszültség esetén.",
     image: "/images/service-koves.webp",
+    video: "/videos/service-koves.webm",
   },
   {
     title: "Sportmasszázs",
@@ -48,6 +51,7 @@ const services: Service[] = [
     short: "Célzott masszázs sportolóknak a teljesítmény és regeneráció érdekében.",
     detail: "A sportmasszázs az aktív életmódot folytató emberek számára készült. Edzés előtt a bemelegítést segíti, edzés után a regenerációt gyorsítja. A terapeuta az adott sportág sajátosságaihoz igazítja a kezelést — futók lábizmaira, úszók vállaira, irodai dolgozók hátára fókuszálva. Nyújtási technikákat, triggerpontos kezelést és mélyszöveti munkát kombináljuk a maximális hatékonyságért.",
     image: "/images/service-sport.webp",
+    video: "/videos/service-sport.webm",
   },
   {
     title: "Thai masszázs",

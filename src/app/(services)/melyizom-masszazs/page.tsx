@@ -13,6 +13,7 @@ export default function MelyizomMasszazsPage() {
       title="Mélyizom masszázs"
       subtitle="Intenzív masszázs a mélyen fekvő izomfeszültségek és krónikus fájdalmak oldására."
       image="/images/service-melyizom.webp"
+      video="/videos/service-melyizom.webm"
       sections={[
         {
           heading: "Mi az a mélyizom masszázs?",
